@@ -1,8 +1,7 @@
 pipeline:
   build:
-    image: golang
+    image: alpine:latest
     commands:
       - go get
       - go build
       - go test
-      
