@@ -1,21 +1,6 @@
-# pipeline:
-#   build:
-#     image: alpine:latest
-#     commands:
-#       # - go get
-#       # - go build
-#       # - go test
-#       - pwd
-
-build:
-  image: golang:1.9.4
-  environment:
-    - GO15VENDOREXPERIMENT=1
-    - CGO_ENABLED=0
-  commands:
-    - go test -cover -coverprofile coverage.out
-
-publish:
-  coverage:
-    when:
-      branch: master
+pipeline:
+  build:
+    image: golang:1.9.4
+    commands:
+      - go build
+      - go test
